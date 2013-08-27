@@ -1,0 +1,79 @@
+//page-wrapper
+#page-wrapper {
+  max-width: $rowWidth;
+  margin: 0 auto;
+}
+
+//top-bar and it's content. This is not the default black top-bar!
+#top-bar {
+  @include outerRow();
+  #top-bar-first {
+    @include column(6);
+  }
+  #top-bar-second {
+    @include column(6);
+  }
+}
+
+//header and it's content
+#header {
+  @include outerRow();
+  .section {
+    @include column(12);
+  }
+}
+//breadcrumbs
+#breadcrumb{ @include outerRow();}
+#breadcrumb-container{ @include column(12);}
+
+//main content block
+#main-wrapper {
+  @include outerRow();
+}
+
+#content {
+  @include push(3);
+  @include mobilePush(0);
+  @include column(6);
+}
+
+.links.inline{
+  @extend .link-list;
+}
+
+#sidebar-first {
+  @include pull(6);
+  @include mobilePull(0);
+  @include column(3);
+}
+
+#sidebar-second {
+  @include column(3);
+}
+
+
+//footer
+footer {
+  @include outerRow();
+  .section{
+    @include column(12);
+  }
+}
+
+//buttons
+.form-submit{
+ //@extend button.button;
+ @extend .button;
+}
+
+//page--user template
+.page-user #sidebar-second{
+  @extend .hide;
+}
+.page-user #sidebar-first{
+  @include mobilePull(0);
+  @include pull(9);
+}
+.page-user #content{
+  @include column(9);
+}
